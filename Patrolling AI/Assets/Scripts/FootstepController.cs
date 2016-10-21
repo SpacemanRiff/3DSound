@@ -3,11 +3,11 @@ using System.Collections;
 
 public class FootstepController : MonoBehaviour {
 
-    AudioSource audio;
+    AudioSource footstepAudio;
     public AudioClip[] footsteps;
     // Use this for initialization
     void Start () {
-        audio = GetComponent<AudioSource>();
+        footstepAudio = GetComponent<AudioSource>();
     }
 	
 	// Update is called once per frame
@@ -17,6 +17,6 @@ public class FootstepController : MonoBehaviour {
 
     public void PlayFootstep(float volume)
     {
-        audio.PlayOneShot(footsteps[(int)Mathf.Floor(Random.value*8)],1);
+        footstepAudio.PlayOneShot(footsteps[(int)Mathf.Floor(Random.value*8)],1);
     }
 }
